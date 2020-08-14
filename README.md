@@ -1,7 +1,7 @@
 [![GitHub release](https://img.shields.io/github/release/scriptex/html-head-component.svg)](https://github.com/scriptex/html-head-component/releases/latest)
 [![GitHub issues](https://img.shields.io/github/issues/scriptex/html-head-component.svg)](https://github.com/scriptex/html-head-component/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/scriptex/html-head-component.svg)](https://github.com/scriptex/html-head-component/commits/master)
-[![Build Status](https://travis-ci.com/scriptex/html-head-component.svg?branch=master)](https://travis-ci.com/scriptex/html-head-component)
+[![Build Status](https://travis-ci.com/scriptex/head-component.svg?branch=master)](https://travis-ci.com/scriptex/head-component)
 [![npm](https://img.shields.io/npm/dt/html-head-component.svg)](https://www.npmjs.com/package/html-head-component)
 [![npm](https://img.shields.io/npm/v/html-head-component.svg)](https://www.npmjs.com/package/html-head-component)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/html-head-component/README.md)](https://github.com/scriptex/html-head-component/)
