@@ -35,13 +35,13 @@ yarn.lock
 .prettierignore
 
 # Config files
-.babelrc
+.nowignore
+.nvmrc
+.whitesource
 renovate.json
-tslint.json
-ts-config.json
-postcss.config.js
-webpack.config.js
+tsconfig.json
 _config.yml
 _.config.yml
 
 # Project specific
+.github

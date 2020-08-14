@@ -1,5 +1,5 @@
 {
-	"name": "head-component",
+	"name": "html-head-component",
 	"version": "1.0.0",
 	"description": "A native web component for everything which might go in the <head> of your document.",
 	"scripts": {
@@ -18,17 +18,15 @@
 		"JavaScript includes"
 	],
 	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
-	"repository": "https://github.com/scriptex/head-component",
+	"repository": "https://github.com/scriptex/html-head-component",
 	"bugs": {
-		"url": "https://github.com/scriptex/head-component/issues",
+		"url": "https://github.com/scriptex/html-head-component/issues",
 		"email": "scriptex.bg@gmail.com"
 	},
 	"license": "MIT",
-	"dependencies": {
-		"lit-element": "^2.3.1"
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"tslib": "^2.0.1",
+		"tslib": "2.0.1",
 		"typescript": "3.9.7"
 	}
 }

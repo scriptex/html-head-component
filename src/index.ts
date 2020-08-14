@@ -1,44 +1,93 @@
-export class HeadComponent extends HTMLElement {
-	private data: Record<string, string | Record<string, string>>;
-	private elements: Record<string, any>;
+export class HTMLHeadComponent extends HTMLElement {
+	private data: Record<string, string>[] = [];
+	private elements: HTMLElement[] = [];
 
 	static get observedAttributes(): string[] {
-		return ['data'];
+		return ['data', 'src'];
 	}
 
 	constructor() {
 		super();
-
-		this.data = {};
-		this.elements = {};
 	}
 
-	public connectedCallback(): void {
-		this.data = JSON.parse(this.getAttribute('data') || '{}');
+	public async connectedCallback(): Promise<void> {
+		const src = this.getAttribute('src');
+		const data = this.getAttribute('data');
 
-		const data = this.data;
+		this.removeElements();
+		this.data = src ? await this.fetchData(src) : this.parseAttribute(data);
+		this.createElements();
+	}
 
-		for (const name in data) {
-			if (name === 'title') {
-				document.title = (data[name] as string) || '';
+	public async attributeChangedCallback(name: string, _: string, newValue: string): Promise<void> {
+		if (name !== 'data') {
+			return;
+		}
+
+		this.removeElements();
+		this.data = this.parseAttribute(newValue);
+		this.createElements();
+	}
+
+	private removeElements(): void {
+		for (const el of this.elements) {
+			document.head.removeChild(el);
+		}
+
+		this.elements = [];
+	}
+
+	private createElements(): void {
+		for (const item of this.data) {
+			const { tag, ...attrs } = item;
+
+			if (tag === 'title') {
+				document.title = (attrs.content as string) || '';
 
 				continue;
 			}
 
-			const item: any = document.createElement(name);
-			const attrs = data[name] as Record<string, string>;
-
-			console.log(item, attrs);
-
-			Object.keys(attrs).forEach((attr: string) => {
-				const attribute = attr.substring(0, 3) === 'og:' ? 'property' : attr;
-
-				item.setAttribute(attribute, attrs[attr]);
-			});
-
-			document.head.appendChild(item);
+			document.head.appendChild(this.createElement(tag, attrs));
 		}
+	}
+
+	private createElement(tag: string, attrs: Record<string, string>): HTMLElement {
+		const el: HTMLElement = document.createElement(tag);
+
+		Object.keys(attrs).forEach((attr: string) => {
+			const attribute = attr.substring(0, 3) === 'og:' ? 'property' : attr;
+
+			if (this.hasContent(attr, tag)) {
+				el.innerHTML = attrs[attr];
+			} else {
+				el.setAttribute(attribute, attrs[attr] || '&nbsp;');
+			}
+		});
+
+		this.elements.push(el);
+
+		return el;
+	}
+
+	private hasContent(attr: string, tag: string): boolean {
+		return attr === 'content' && ['style', 'script', 'noscript'].includes(tag);
+	}
+
+	private parseAttribute(value: string | null): Record<string, string>[] {
+		if (!value) {
+			return [];
+		}
+
+		try {
+			return JSON.parse(value);
+		} catch (e) {
+			return [];
+		}
+	}
+
+	private async fetchData(src: string): Promise<Record<string, string>[]> {
+		return await fetch(src).then((r: Response) => r.json());
 	}
 }
 
-window.customElements.define('head-component', HeadComponent);
+window.customElements.define('html-head-component', HTMLHeadComponent);

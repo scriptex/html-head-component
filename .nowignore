@@ -1,4 +1,6 @@
+.github
 src
+demo
 
 _.config.yml
 _config.yml
@@ -6,17 +8,15 @@ _config.yml
 .gitattrubutes
 .gitignore
 .npmignore
+.nvmrc
 .prettierignore
 .prettierrc
 .travis.yml
 .whitesource
 package.json
 renovate.json
-webpack.config.js
+tsconfig.json
 yarn.lock
-
-*.appcache
-*.sketch
 
 LICENSE
 README.md
