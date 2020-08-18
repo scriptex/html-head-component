@@ -1,6 +1,6 @@
 {
 	"name": "html-head-component",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A native web component for everything which might go in the <head> of your document.",
 	"scripts": {
 		"build": "tsc -p .",
