@@ -1,4 +1,4 @@
-export class HTMLHeadComponent extends HTMLElement {
+class HTMLHeadComponent extends HTMLElement {
 	private data: Record<string, string>[] = [];
 	private elements: HTMLElement[] = [];
 
@@ -86,7 +86,7 @@ export class HTMLHeadComponent extends HTMLElement {
 	}
 
 	private async fetchData(src: string): Promise<Record<string, string>[]> {
-		return await fetch(src).then((r: Response) => r.json());
+		return fetch(src).then((r: Response) => r.json());
 	}
 }
 
