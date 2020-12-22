@@ -42,7 +42,9 @@ or
 
 Then add the component in your HTML/JSX markup:
 
-using the `data` attribute
+**The custom component should be placed in the `<body>` tag. If you try to place it in the `<head>` the browser will explicitly move it in the `<body>` and you might experience [issues](https://github.com/scriptex/html-head-component/issues/12) with the rest of the elements in the `<head>`.**
+
+### Using the `data` attribute
 
 ```html
 <html-head-component
@@ -67,7 +69,7 @@ using the `data` attribute
 ></html-head-component>
 ```
 
-or using the `src` attribute
+### Using the `src` attribute
 
 ```html
 <html-head-component src="./data.json"></html-head-component>
