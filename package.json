@@ -1,32 +1,39 @@
 {
 	"name": "html-head-component",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "A native web component for everything which might go in the <head> of your document.",
+	"keywords": [
+		"Head",
+		"Meta",
+		"Favicon",
+		"Meta tags",
+		"Link tags",
+		"Document meta",
+		"HTML includes",
+		"Stylesheet includes",
+		"JavaScript includes"
+	],
+	"homepage": "https://atanas.info/projects/html-head-component.html",
+	"bugs": {
+		"url": "https://github.com/scriptex/html-head-component/issues",
+		"email": "hi@atanas.info"
+	},
+	"license": "MIT",
+	"author": "Atanas Atanasov <hi@atanas.info> (https://atanas.info)",
+	"funding": "https://github.com/sponsors/scriptex",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "github:scriptex/html-head-component"
+	},
 	"scripts": {
 		"build": "tsc -p .",
 		"watch": "tsc -p . -w"
 	},
-	"main": "dist/index.js",
-	"typings": "dist/index.d.ts",
-	"keywords": [
-		"Head",
-		"Meta",
-		"Document meta",
-		"HTML includes",
-		"Stylesheet includes",
-		"Favicon",
-		"JavaScript includes"
-	],
-	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
-	"repository": "https://github.com/scriptex/html-head-component",
-	"bugs": {
-		"url": "https://github.com/scriptex/html-head-component/issues",
-		"email": "scriptex.bg@gmail.com"
-	},
-	"license": "MIT",
 	"dependencies": {},
 	"devDependencies": {
 		"tslib": "2.4.0",
-		"typescript": "4.7.4"
+		"typescript": "4.8.3"
 	}
 }
