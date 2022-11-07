@@ -1,6 +1,6 @@
 {
 	"name": "html-head-component",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A native web component for everything which might go in the <head> of your document.",
 	"keywords": [
 		"Head",
@@ -13,7 +13,7 @@
 		"Stylesheet includes",
 		"JavaScript includes"
 	],
-	"homepage": "https://atanas.info/projects/html-head-component.html",
+	"homepage": "https://atanas.info/portfolio/open-source/html-head-component",
 	"bugs": {
 		"url": "https://github.com/scriptex/html-head-component/issues",
 		"email": "hi@atanas.info"
